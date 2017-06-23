@@ -31,7 +31,6 @@ func (e Gauge) Stats() []string {
 		// a negative gauge value we first set the gauge absolutely to 0, then send the
 		// negative value as a delta from 0 (that's just how the spec works :-)
 		return []string{
-			fmt.Sprintf("%s:%d|g", e.Name, 0),
 			fmt.Sprintf("%s:%d|g", e.Name, e.Value),
 		}
 	}
